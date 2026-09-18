@@ -5,7 +5,7 @@
 # Chainguard tag needs a paid registry). Runtime: Chainguard static (no shell, no package manager, nonroot).
 # Both bases are pinned by digest; Dependabot (docker ecosystem) refreshes them weekly and CI re-scans.
 # Refresh manually: docker buildx imagetools inspect docker.io/library/golang:1.26.6-alpine (must match the go.mod toolchain)
-FROM docker.io/library/golang:1.26.6-alpine@sha256:3889b425f035be855a72fb4755265311293b6d414521f0a519d819df32222d83 AS build
+FROM docker.io/library/golang:1.27.1-alpine@sha256:4cb7ac979db5fcc41cae44b2227ba5ab8a51e8807f40d9ba4dee20a0ad960b5b AS build
 WORKDIR /src
 COPY go.mod go.sum ./
 RUN go mod download
